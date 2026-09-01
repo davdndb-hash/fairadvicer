@@ -51,6 +51,8 @@ const en: SiteCopy = {
       { value: "AZAV", label: "certified exam preparation" },
       { value: "1:1", label: "one dedicated contact, long after day one" },
     ],
+    mapCaption:
+      "World map: Munich as the destination, connected to our recruiting regions in São Paulo, Lima, Jakarta, Manila and Kochi.",
     statsTitle: "FairAdvicer by the numbers",
     stats: [
       { value: "€0", label: "Up front – you only pay once a placement succeeds" },

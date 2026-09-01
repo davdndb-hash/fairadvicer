@@ -51,6 +51,8 @@ const de: SiteCopy = {
       { value: "AZAV", label: "zertifizierte Prüfungsvorbereitung" },
       { value: "1:1", label: "feste Ansprechperson – auch nach dem Start" },
     ],
+    mapCaption:
+      "Weltkarte: München als Zielort, verbunden mit unseren Rekrutierungsregionen in São Paulo, Lima, Jakarta, Manila und Kochi.",
     statsTitle: "FairAdvicer in Zahlen",
     stats: [
       { value: "0 €", label: "Vorkasse – Sie zahlen erst bei erfolgreicher Vermittlung" },

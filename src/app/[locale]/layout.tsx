@@ -37,8 +37,9 @@ export async function generateMetadata({
       locale: copy.langTag,
       title: copy.meta.homeTitle,
       description: copy.meta.homeDescription,
+      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: site.legalName }],
     },
-    twitter: { card: "summary_large_image" },
+    twitter: { card: "summary_large_image", images: ["/og-image.png"] },
     robots: { index: true, follow: true },
   };
 }

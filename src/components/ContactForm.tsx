@@ -29,24 +29,24 @@ export default function ContactForm({
     return (
       <div
         className={`flex flex-col items-start gap-3 rounded-xl2 border p-8 ${
-          light ? "border-white/15 bg-white/5 text-white" : "border-teal-200 bg-teal-50 text-ink"
+          light ? "border-white/15 bg-white/5 text-white" : "border-brand-200 bg-brand-50 text-ink"
         }`}
         role="status"
       >
-        <span className={`flex h-11 w-11 items-center justify-center rounded-full ${light ? "bg-amber-500 text-teal-950" : "bg-teal-700 text-white"}`}>
+        <span className={`flex h-11 w-11 items-center justify-center rounded-full ${light ? "bg-accent-500 text-brand-950" : "bg-brand-700 text-white"}`}>
           <Icon name="check" className="h-5 w-5" />
         </span>
         <h3 className="font-display text-2xl">{f.successTitle}</h3>
-        <p className={`text-[0.95rem] leading-relaxed ${light ? "text-teal-100/85" : "text-ink-soft"}`}>
+        <p className={`text-[0.95rem] leading-relaxed ${light ? "text-brand-100/85" : "text-ink-soft"}`}>
           {f.successBody}
         </p>
       </div>
     );
   }
 
-  const labelCls = light ? "label text-teal-100/80" : "label";
+  const labelCls = light ? "label text-brand-100/80" : "label";
   const fieldCls = light
-    ? "field border-white/15 bg-white/8 text-white placeholder:text-white/40 focus:border-amber-400 focus:shadow-none"
+    ? "field border-white/15 bg-white/8 text-white placeholder:text-white/40 focus:border-accent-400 focus:shadow-none"
     : "field";
 
   return (
@@ -159,23 +159,23 @@ export default function ContactForm({
         />
       </div>
 
-      <label className={`flex items-start gap-3 text-[0.85rem] leading-relaxed ${light ? "text-teal-100/80" : "text-ink-soft"}`}>
+      <label className={`flex items-start gap-3 text-[0.85rem] leading-relaxed ${light ? "text-brand-100/80" : "text-ink-soft"}`}>
         <input
           type="checkbox"
           name="consent"
           required
-          className="mt-0.5 h-4 w-4 shrink-0 rounded border-line accent-[#0e5d54]"
+          className="mt-0.5 h-4 w-4 shrink-0 rounded border-line accent-[#235133]"
         />
         <span>
           {f.privacy}{" "}
-          <Link href="/datenschutz" className={light ? "underline hover:text-white" : "underline hover:text-teal-700"}>
+          <Link href="/datenschutz" className={light ? "underline hover:text-white" : "underline hover:text-brand-700"}>
             {f.privacyLink}
           </Link>
         </span>
       </label>
 
       {state.status === "error" && (
-        <p className={`text-[0.85rem] ${light ? "text-amber-400" : "text-coral-500"}`} role="alert">
+        <p className={`text-[0.85rem] ${light ? "text-accent-400" : "text-coral-500"}`} role="alert">
           {f.error}
         </p>
       )}

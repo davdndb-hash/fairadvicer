@@ -39,14 +39,14 @@ export default function Header({ copy, locale }: { copy: SiteCopy; locale: Local
 
   return (
     <>
-      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-teal-900 focus:px-4 focus:py-2 focus:text-sm focus:text-white">
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-brand-900 focus:px-4 focus:py-2 focus:text-sm focus:text-white">
         {copy.common.skip}
       </a>
 
-      <div className="hidden bg-teal-950 text-teal-100 lg:block">
+      <div className="hidden bg-brand-950 text-brand-100 lg:block">
         <div className="container-x flex h-9 items-center justify-between text-[0.78rem]">
           <p className="flex items-center gap-2">
-            <Icon name="sparkle" className="h-3.5 w-3.5 text-amber-400" />
+            <Icon name="sparkle" className="h-3.5 w-3.5 text-accent-400" />
             {copy.meta.tagline}
           </p>
           <div className="flex items-center gap-5">
@@ -58,7 +58,7 @@ export default function Header({ copy, locale }: { copy: SiteCopy; locale: Local
               <Icon name="mail" className="h-3.5 w-3.5" />
               {site.email}
             </a>
-            <span className="flex items-center gap-1.5 text-teal-200/80">
+            <span className="flex items-center gap-1.5 text-brand-200/80">
               <Icon name="clock" className="h-3.5 w-3.5" />
               {copy.common.officeHoursValue}
             </span>
@@ -85,8 +85,8 @@ export default function Header({ copy, locale }: { copy: SiteCopy; locale: Local
                 href={l.href}
                 className={`rounded-full px-3.5 py-2 text-[0.9rem] font-medium transition-colors ${
                   pathname === l.href
-                    ? "text-teal-700"
-                    : "text-ink-soft hover:bg-teal-50 hover:text-teal-700"
+                    ? "text-brand-700"
+                    : "text-ink-soft hover:bg-brand-50 hover:text-brand-700"
                 }`}
               >
                 {l.label}
@@ -136,7 +136,7 @@ export default function Header({ copy, locale }: { copy: SiteCopy; locale: Local
                   {l.label}
                 </Link>
               ))}
-              <Link href="/kontakt" className="border-b border-line/70 py-4 font-display text-2xl text-teal-700">
+              <Link href="/kontakt" className="border-b border-line/70 py-4 font-display text-2xl text-brand-700">
                 {copy.nav.contact}
               </Link>
             </nav>
@@ -152,7 +152,7 @@ export default function Header({ copy, locale }: { copy: SiteCopy; locale: Local
 
             <div className="mt-7 flex items-center justify-between">
               <LocaleSwitcher current={locale} label={copy.nav.langLabel} />
-              <a href={site.phoneHref} className="text-sm font-medium text-teal-700">
+              <a href={site.phoneHref} className="text-sm font-medium text-brand-700">
                 {site.phone}
               </a>
             </div>

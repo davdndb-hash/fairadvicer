@@ -86,7 +86,7 @@ export default async function NursesPage({
           <Reveal className="mt-6">
             <div className="card flex flex-col gap-4 p-7 sm:flex-row sm:items-center sm:justify-between lg:p-9">
               <div className="flex items-start gap-5">
-                <span className="font-display text-[2.6rem] leading-none text-teal-100">
+                <span className="font-display text-[2.6rem] leading-none text-brand-100">
                   {c.steps[4].step}
                 </span>
                 <div>
@@ -115,14 +115,14 @@ export default async function NursesPage({
         </Reveal>
         <Reveal delay={100}>
           <div className="card h-full p-8 lg:p-11">
-            <span className="flex h-12 w-12 items-center justify-center rounded-xl2 bg-teal-50 text-teal-600">
+            <span className="flex h-12 w-12 items-center justify-center rounded-xl2 bg-brand-50 text-brand-600">
               <Icon name="certificate" className="h-5 w-5" />
             </span>
             <h2 className="mt-6 font-display text-[2rem] leading-tight">{c.documentsTitle}</h2>
             <ol className="mt-6 divide-y divide-line">
               {c.documents.map((d, i) => (
                 <li key={d} className="flex items-center gap-4 py-4">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-50 text-[0.8rem] font-semibold text-teal-700">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-50 text-[0.8rem] font-semibold text-brand-700">
                     {i + 1}
                   </span>
                   <span className="text-[0.95rem] text-ink">{d}</span>
@@ -142,7 +142,7 @@ export default async function NursesPage({
         </Reveal>
       </section>
 
-      <section className="relative overflow-hidden bg-teal-950 text-white">
+      <section className="relative overflow-hidden bg-brand-950 text-white">
         <div className="grain grain-light" />
         <div className="container-x relative py-20 lg:py-28">
           <SectionHead title={c.guaranteeTitle} light align="center" />

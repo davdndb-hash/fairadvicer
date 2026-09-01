@@ -25,8 +25,8 @@ export default function ApplyForm({
 
   if (state.status === "success") {
     return (
-      <div className="rounded-xl2 border border-teal-200 bg-teal-50 p-8" role="status">
-        <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-teal-700 text-white">
+      <div className="rounded-xl2 border border-brand-200 bg-brand-50 p-8" role="status">
+        <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-brand-700 text-white">
           <Icon name="check" className="h-5 w-5" />
         </span>
         <h3 className="font-display text-2xl">{f.successTitle}</h3>
@@ -122,10 +122,10 @@ export default function ApplyForm({
       </div>
 
       <label className="flex items-start gap-3 text-[0.85rem] leading-relaxed text-ink-soft">
-        <input type="checkbox" name="consent" required className="mt-0.5 h-4 w-4 shrink-0 rounded border-line accent-[#0e5d54]" />
+        <input type="checkbox" name="consent" required className="mt-0.5 h-4 w-4 shrink-0 rounded border-line accent-[#235133]" />
         <span>
           {f.privacy}{" "}
-          <Link href="/datenschutz" className="underline hover:text-teal-700">
+          <Link href="/datenschutz" className="underline hover:text-brand-700">
             {f.privacyLink}
           </Link>
         </span>

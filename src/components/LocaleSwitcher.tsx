@@ -53,11 +53,11 @@ export default function LocaleSwitcher({
             className={`rounded-full px-2.5 py-1 text-[0.72rem] font-semibold tracking-wide transition-colors ${
               active
                 ? light
-                  ? "bg-white text-teal-950"
-                  : "bg-teal-700 text-white"
+                  ? "bg-white text-brand-950"
+                  : "bg-brand-700 text-white"
                 : light
                   ? "text-white/70 hover:text-white"
-                  : "text-ink-muted hover:text-teal-700"
+                  : "text-ink-muted hover:text-brand-700"
             }`}
           >
             {labels[loc]}

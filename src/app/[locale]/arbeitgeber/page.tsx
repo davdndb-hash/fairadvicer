@@ -99,13 +99,13 @@ export default async function EmployersPage({
           </Reveal>
           <Reveal delay={100}>
             <div className="card h-full p-8 lg:p-11">
-              <span className="flex h-12 w-12 items-center justify-center rounded-xl2 bg-amber-500/15 text-amber-600">
+              <span className="flex h-12 w-12 items-center justify-center rounded-xl2 bg-accent-500/15 text-accent-700">
                 <Icon name="euro" className="h-5 w-5" />
               </span>
               <h3 className="mt-6 font-display text-[2rem] leading-tight">{c.costTitle}</h3>
               <p className="mt-4 text-[0.98rem] leading-relaxed text-ink-soft pretty">{c.costBody}</p>
-              <div className="mt-8 rounded-xl2 bg-teal-50 p-5">
-                <p className="text-[0.9rem] font-medium text-teal-900">{copy.home.stats[0].label}</p>
+              <div className="mt-8 rounded-xl2 bg-brand-50 p-5">
+                <p className="text-[0.9rem] font-medium text-brand-900">{copy.home.stats[0].label}</p>
               </div>
             </div>
           </Reveal>

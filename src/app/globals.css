@@ -1,31 +1,34 @@
 @import "tailwindcss";
 
 @theme {
-  /* ---- Brand palette ---- */
+  /* ---- Brand palette, derived from the FairAdvicer logo ----
+     forest green #163021 + burnt orange #D15E00 */
   --color-paper: #fbf8f3;
   --color-paper-2: #f4efe6;
-  --color-ink: #0b1b19;
-  --color-ink-soft: #3d4a48;
-  --color-ink-muted: #6b7a77;
+  --color-ink: #101e17;
+  --color-ink-soft: #3d4a43;
+  --color-ink-muted: #6b7a72;
 
-  --color-teal-50: #eef6f4;
-  --color-teal-100: #d9ece8;
-  --color-teal-200: #b3d8d0;
-  --color-teal-400: #3f9c8f;
-  --color-teal-500: #17867a;
-  --color-teal-600: #0f6c62;
-  --color-teal-700: #0e5d54;
-  --color-teal-900: #08403a;
-  --color-teal-950: #06302c;
+  --color-brand-50: #eef4f0;
+  --color-brand-100: #dae7de;
+  --color-brand-200: #b5cfbf;
+  --color-brand-400: #4e8a66;
+  --color-brand-500: #35704d;
+  --color-brand-600: #275b3d;
+  --color-brand-700: #235133;
+  --color-brand-900: #163021;
+  --color-brand-950: #0e2116;
 
-  --color-amber-400: #f0b45c;
-  --color-amber-500: #e8a33d;
-  --color-amber-600: #c9862a;
+  /* accent-700 for small text on light, accent-400 for text on dark,
+     accent-500 is the logo orange and stays for fills and graphics */
+  --color-accent-400: #e8843a;
+  --color-accent-500: #d15e00;
+  --color-accent-700: #a94b00;
 
-  --color-coral-500: #e1604a;
+  --color-coral-500: #c4503c;
 
-  --color-line: #e4dcd0;
-  --color-line-dark: #17423c;
+  --color-line: #e4ddd2;
+  --color-line-dark: #21402d;
 
   /* ---- Type ---- */
   --font-display: var(--font-instrument-serif), "Iowan Old Style", Georgia, serif;
@@ -36,9 +39,10 @@
   --radius-xl3: 1.75rem;
 
   /* ---- Shadows ---- */
-  --shadow-soft: 0 1px 2px rgba(11, 27, 25, 0.04), 0 8px 30px rgba(11, 27, 25, 0.06);
-  --shadow-lift: 0 2px 4px rgba(11, 27, 25, 0.05), 0 18px 50px rgba(11, 27, 25, 0.1);
+  --shadow-soft: 0 1px 2px rgba(16, 30, 23, 0.04), 0 8px 30px rgba(16, 30, 23, 0.06);
+  --shadow-lift: 0 2px 4px rgba(16, 30, 23, 0.05), 0 18px 50px rgba(16, 30, 23, 0.1);
 }
+
 
 @layer base {
   * {
@@ -60,7 +64,7 @@
   }
 
   ::selection {
-    background-color: var(--color-teal-900);
+    background-color: var(--color-brand-900);
     color: #fff;
   }
 
@@ -72,7 +76,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-teal-500);
+    outline: 2px solid var(--color-brand-500);
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -97,15 +101,15 @@
     font-weight: 600;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--color-teal-600);
+    color: var(--color-brand-600);
   }
   .eyebrow::before {
     content: "";
     width: 1.75rem;
     height: 1px;
-    background: var(--color-amber-500);
+    background: var(--color-accent-500);
   }
-  .eyebrow-light { color: var(--color-teal-200); }
+  .eyebrow-light { color: var(--color-brand-200); }
 
   .btn {
     display: inline-flex;
@@ -125,24 +129,24 @@
   .btn:active { transform: translateY(0); }
 
   .btn-primary {
-    background: var(--color-teal-700);
+    background: var(--color-brand-700);
     color: #fff;
     box-shadow: var(--shadow-soft);
   }
-  .btn-primary:hover { background: var(--color-teal-900); }
+  .btn-primary:hover { background: var(--color-brand-900); }
 
   .btn-accent {
-    background: var(--color-amber-500);
-    color: var(--color-teal-950);
+    background: var(--color-accent-500);
+    color: var(--color-brand-950);
   }
-  .btn-accent:hover { background: var(--color-amber-400); }
+  .btn-accent:hover { background: var(--color-accent-400); }
 
   .btn-ghost {
     border: 1px solid var(--color-line);
     color: var(--color-ink);
     background: transparent;
   }
-  .btn-ghost:hover { border-color: var(--color-teal-500); color: var(--color-teal-700); }
+  .btn-ghost:hover { border-color: var(--color-brand-500); color: var(--color-brand-700); }
 
   .btn-ghost-light {
     border: 1px solid rgba(255, 255, 255, 0.28);
@@ -183,7 +187,7 @@
     margin-bottom: 1rem;
   }
   .prose-legal li { margin-bottom: 0.35rem; }
-  .prose-legal a { color: var(--color-teal-700); text-decoration: underline; overflow-wrap: anywhere; }
+  .prose-legal a { color: var(--color-brand-700); text-decoration: underline; overflow-wrap: anywhere; }
 
   .article-body { max-width: 44rem; }
   .article-body h2 {
@@ -218,7 +222,7 @@
     width: 0.45rem;
     height: 0.45rem;
     border-radius: 999px;
-    background: var(--color-amber-500);
+    background: var(--color-accent-500);
   }
 
   .field {
@@ -234,8 +238,8 @@
   .field::placeholder { color: #9aa8a5; }
   .field:focus {
     outline: none;
-    border-color: var(--color-teal-500);
-    box-shadow: 0 0 0 3px var(--color-teal-100);
+    border-color: var(--color-brand-500);
+    box-shadow: 0 0 0 3px var(--color-brand-100);
   }
   .label {
     display: block;
@@ -251,7 +255,7 @@
     inset: 0;
     pointer-events: none;
     opacity: 0.5;
-    background-image: radial-gradient(rgba(11, 27, 25, 0.055) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(16, 30, 23, 0.055) 1px, transparent 1px);
     background-size: 22px 22px;
   }
   .grain-light {

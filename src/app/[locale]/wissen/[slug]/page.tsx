@@ -77,11 +77,11 @@ export default async function PostPage({
       <section className="relative overflow-hidden border-b border-line bg-paper-2/60">
         <div className="grain" />
         <div className="container-x relative py-12 lg:py-16">
-          <Link href="/wissen" className="inline-flex items-center gap-1.5 text-[0.85rem] font-semibold text-teal-700">
+          <Link href="/wissen" className="inline-flex items-center gap-1.5 text-[0.85rem] font-semibold text-brand-700">
             <Icon name="arrow" className="h-4 w-4 rotate-180" />
             {copy.insights.eyebrow}
           </Link>
-          <div className="mt-6 flex flex-wrap items-center gap-3 text-[0.76rem] font-semibold uppercase tracking-[0.12em] text-teal-600">
+          <div className="mt-6 flex flex-wrap items-center gap-3 text-[0.76rem] font-semibold uppercase tracking-[0.12em] text-brand-600">
             <span>{copy.insights.audience[post.audience]}</span>
             <span className="h-1 w-1 rounded-full bg-line" />
             <span className="text-ink-muted">

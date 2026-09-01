@@ -16,13 +16,13 @@ export default function JobCard({
   const t = jobT(job, locale);
 
   return (
-    <article className="group card relative flex h-full flex-col p-6 transition-all duration-300 hover:-translate-y-1 hover:border-teal-200 hover:shadow-lift">
+    <article className="group card relative flex h-full flex-col p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-lift">
       {job.featured && (
-        <span className="absolute right-5 top-5 rounded-full bg-amber-500/15 px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-wider text-amber-600">
+        <span className="absolute right-5 top-5 rounded-full bg-accent-500/15 px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-wider text-accent-700">
           Top
         </span>
       )}
-      <p className="flex items-center gap-1.5 text-[0.78rem] font-medium text-teal-600">
+      <p className="flex items-center gap-1.5 text-[0.78rem] font-medium text-brand-600">
         <Icon name="pin" className="h-3.5 w-3.5" />
         {[job.city, job.region].filter(Boolean).join(", ")}
       </p>
@@ -37,22 +37,22 @@ export default function JobCard({
       <dl className="mt-5 flex flex-wrap gap-x-5 gap-y-2 border-t border-line pt-4 text-[0.8rem]">
         <div className="flex items-center gap-1.5">
           <dt className="sr-only">{copy.jobs.facts.salary}</dt>
-          <Icon name="euro" className="h-3.5 w-3.5 text-teal-500" />
+          <Icon name="euro" className="h-3.5 w-3.5 text-brand-500" />
           <dd className="font-medium text-ink">{formatSalary(job, locale, copy.jobs.noSalary)}</dd>
         </div>
         <div className="flex items-center gap-1.5">
           <dt className="sr-only">{copy.jobs.facts.german}</dt>
-          <Icon name="chat" className="h-3.5 w-3.5 text-teal-500" />
+          <Icon name="chat" className="h-3.5 w-3.5 text-brand-500" />
           <dd className="text-ink-soft">{job.german_level}</dd>
         </div>
         <div className="flex items-center gap-1.5">
           <dt className="sr-only">{copy.jobs.facts.start}</dt>
-          <Icon name="clock" className="h-3.5 w-3.5 text-teal-500" />
+          <Icon name="clock" className="h-3.5 w-3.5 text-brand-500" />
           <dd className="text-ink-soft">{job.starts_at}</dd>
         </div>
       </dl>
 
-      <span className="mt-5 inline-flex items-center gap-1.5 text-[0.86rem] font-semibold text-teal-700">
+      <span className="mt-5 inline-flex items-center gap-1.5 text-[0.86rem] font-semibold text-brand-700">
         {copy.jobs.cardCta}
         <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
       </span>

@@ -1,32 +1,34 @@
+import Image from "next/image";
 import type { SVGProps } from "react";
 
-export function Logo({ className = "", light = false }: { className?: string; light?: boolean }) {
-  const ink = light ? "#FBF8F3" : "#0B1B19";
-  const accent = light ? "#F0B45C" : "#0E5D54";
+export function Logo({
+  className = "",
+  light = false,
+  variant = "wordmark",
+}: {
+  className?: string;
+  light?: boolean;
+  variant?: "wordmark" | "full";
+}) {
+  const full = variant === "full";
+  const src = full
+    ? light
+      ? "/logo-full-light.webp"
+      : "/logo-full.webp"
+    : light
+      ? "/logo-wordmark-light.webp"
+      : "/logo-wordmark.webp";
+
   return (
-    <span className={`inline-flex items-center gap-2.5 ${className}`}>
-      <svg width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <path
-          d="M6 22.5c0-6.9 4.4-11.5 10.6-11.5"
-          stroke={accent}
-          strokeWidth="2.6"
-          strokeLinecap="round"
-        />
-        <path
-          d="M26 9.5c0 6.9-4.4 11.5-10.6 11.5"
-          stroke={ink}
-          strokeWidth="2.6"
-          strokeLinecap="round"
-        />
-        <circle cx="25.4" cy="22.6" r="2.5" fill={accent} />
-      </svg>
-      <span
-        className="text-[1.15rem] font-semibold tracking-[-0.02em]"
-        style={{ color: ink }}
-      >
-        Fair<span style={{ color: accent }}>Advicer</span>
-      </span>
-    </span>
+    <Image
+      src={src}
+      alt="FairAdvicer"
+      width={full ? 900 : 800}
+      height={full ? 153 : 85}
+      priority={!full}
+      sizes={full ? "260px" : "210px"}
+      className={`${full ? "h-auto w-[13.5rem]" : "h-auto w-[10.5rem] sm:w-[11.5rem]"} ${className}`}
+    />
   );
 }
 

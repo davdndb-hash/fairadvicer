@@ -123,7 +123,7 @@ export default function JobBoard({
               setRegion("");
               setType("");
             }}
-            className="text-[0.85rem] font-semibold text-teal-700 underline underline-offset-4"
+            className="text-[0.85rem] font-semibold text-brand-700 underline underline-offset-4"
           >
             {copy.jobs.filterAll}
           </button>
@@ -132,7 +132,7 @@ export default function JobBoard({
 
       {filtered.length === 0 ? (
         <div className="card mt-8 flex flex-col items-start gap-4 p-10 text-center sm:items-center">
-          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-teal-50 text-teal-600">
+          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-50 text-brand-600">
             <Icon name="search" className="h-5 w-5" />
           </span>
           <p className="text-[1rem] text-ink-soft">{copy.jobs.empty}</p>

@@ -18,7 +18,7 @@ export default function Accordion({ items, light = false }: { items: Faq[]; ligh
                 onClick={() => setOpen(isOpen ? null : i)}
                 aria-expanded={isOpen}
                 className={`flex w-full items-start justify-between gap-6 py-5 text-left font-sans text-[1.02rem] font-semibold tracking-[-0.01em] transition-colors ${
-                  light ? "text-white hover:text-amber-400" : "text-ink hover:text-teal-700"
+                  light ? "text-white hover:text-accent-400" : "text-ink hover:text-brand-700"
                 }`}
               >
                 <span className="pretty">{item.q}</span>
@@ -28,8 +28,8 @@ export default function Accordion({ items, light = false }: { items: Faq[]; ligh
                   }`}
                   aria-hidden="true"
                 >
-                  <span className={`absolute left-0 top-1/2 h-[1.5px] w-4 -translate-y-1/2 ${light ? "bg-amber-400" : "bg-teal-600"}`} />
-                  <span className={`absolute left-1/2 top-0 h-4 w-[1.5px] -translate-x-1/2 ${light ? "bg-amber-400" : "bg-teal-600"}`} />
+                  <span className={`absolute left-0 top-1/2 h-[1.5px] w-4 -translate-y-1/2 ${light ? "bg-accent-400" : "bg-brand-600"}`} />
+                  <span className={`absolute left-1/2 top-0 h-4 w-[1.5px] -translate-x-1/2 ${light ? "bg-accent-400" : "bg-brand-600"}`} />
                 </span>
               </button>
             </h3>
@@ -40,7 +40,7 @@ export default function Accordion({ items, light = false }: { items: Faq[]; ligh
               <div className="overflow-hidden">
                 <p
                   className={`max-w-2xl pb-6 text-[0.95rem] leading-relaxed pretty ${
-                    light ? "text-teal-100/85" : "text-ink-soft"
+                    light ? "text-brand-100/85" : "text-ink-soft"
                   }`}
                 >
                   {item.a}

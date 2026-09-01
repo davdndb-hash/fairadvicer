@@ -62,11 +62,11 @@ export default async function AboutPage({
           </div>
         </Reveal>
         <Reveal delay={100}>
-          <div className="relative h-full overflow-hidden rounded-xl3 bg-teal-950 p-9 text-white lg:p-12">
+          <div className="relative h-full overflow-hidden rounded-xl3 bg-brand-950 p-9 text-white lg:p-12">
             <div className="grain grain-light" />
             <div
               className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full"
-              style={{ background: "radial-gradient(circle, rgba(232,163,61,.32) 0%, transparent 65%)" }}
+              style={{ background: "radial-gradient(circle, rgba(209,94,0,.32) 0%, transparent 65%)" }}
             />
             <p className="eyebrow eyebrow-light relative">{copy.meta.siteName}</p>
             <p className="relative mt-6 font-display text-[2.2rem] leading-[1.15] lg:text-[2.6rem] balance">
@@ -75,8 +75,8 @@ export default async function AboutPage({
             <dl className="relative mt-10 grid gap-6 sm:grid-cols-2">
               {copy.home.stats.map((s) => (
                 <div key={s.label}>
-                  <dt className="font-display text-[2.2rem] leading-none text-amber-400">{s.value}</dt>
-                  <dd className="mt-2 text-[0.85rem] leading-relaxed text-teal-100/80">{s.label}</dd>
+                  <dt className="font-display text-[2.2rem] leading-none text-accent-400">{s.value}</dt>
+                  <dd className="mt-2 text-[0.85rem] leading-relaxed text-brand-100/80">{s.label}</dd>
                 </div>
               ))}
             </dl>
@@ -99,15 +99,15 @@ export default async function AboutPage({
           {c.team.map((person, i) => (
             <Reveal as="li" key={person.name} delay={i * 70}>
               <article className="card h-full overflow-hidden">
-                <div className="relative flex h-40 items-center justify-center overflow-hidden bg-teal-950">
+                <div className="relative flex h-40 items-center justify-center overflow-hidden bg-brand-950">
                   <div className="grain grain-light" />
                   <div
                     className="pointer-events-none absolute inset-0"
                     style={{
                       background:
                         i % 2 === 0
-                          ? "radial-gradient(circle at 30% 20%, rgba(23,134,122,.55) 0%, transparent 62%)"
-                          : "radial-gradient(circle at 70% 30%, rgba(232,163,61,.35) 0%, transparent 62%)",
+                          ? "radial-gradient(circle at 30% 20%, rgba(53,112,77,.55) 0%, transparent 62%)"
+                          : "radial-gradient(circle at 70% 30%, rgba(209,94,0,.35) 0%, transparent 62%)",
                     }}
                   />
                   <span className="relative font-display text-[3rem] leading-none text-white/90">
@@ -116,7 +116,7 @@ export default async function AboutPage({
                 </div>
                 <div className="p-6">
                   <h3 className="font-sans text-[1.02rem] font-semibold tracking-[-0.01em]">{person.name}</h3>
-                  <p className="mt-1 text-[0.8rem] font-medium uppercase tracking-[0.1em] text-teal-600">
+                  <p className="mt-1 text-[0.8rem] font-medium uppercase tracking-[0.1em] text-brand-600">
                     {person.role}
                   </p>
                   <p className="mt-3 text-[0.9rem] leading-relaxed text-ink-soft pretty">{person.body}</p>
@@ -139,12 +139,12 @@ export default async function AboutPage({
                   rel="noreferrer"
                   className="card group flex h-full flex-col p-7 transition-all hover:-translate-y-1 hover:shadow-lift"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl2 bg-teal-50 text-teal-600">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl2 bg-brand-50 text-brand-600">
                     <Icon name="globe" className="h-5 w-5" />
                   </span>
                   <h3 className="mt-5 font-sans text-[1.02rem] font-semibold tracking-[-0.01em]">{p.name}</h3>
                   <p className="mt-2 flex-1 text-[0.92rem] leading-relaxed text-ink-soft pretty">{p.body}</p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-[0.85rem] font-semibold text-teal-700">
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-[0.85rem] font-semibold text-brand-700">
                     {copy.common.more}
                     <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>

@@ -44,6 +44,7 @@ export type SiteCopy = {
     ctaSecondary: string;
     trust: string[];
     heroBadges: { value: string; label: string }[];
+    mapCaption: string;
     statsTitle: string;
     stats: { value: string; label: string }[];
     servicesEyebrow: string;

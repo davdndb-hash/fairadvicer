@@ -51,6 +51,8 @@ const pt: SiteCopy = {
       { value: "AZAV", label: "preparação certificada para o exame" },
       { value: "1:1", label: "uma pessoa de contato dedicada, mesmo depois do início" },
     ],
+    mapCaption:
+      "Mapa-múndi: Munique como destino, ligada às nossas regiões de recrutamento em São Paulo, Lima, Jacarta, Manila e Kochi.",
     statsTitle: "A FairAdvicer em números",
     stats: [
       { value: "0 €", label: "De entrada – você paga somente quando a contratação acontece" },

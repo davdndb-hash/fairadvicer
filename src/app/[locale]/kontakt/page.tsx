@@ -63,13 +63,13 @@ export default async function ContactPage({
       <section className="container-x grid gap-14 py-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20 lg:py-24">
         <div>
           <Reveal>
-            <h2 className="font-sans text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-teal-600">
+            <h2 className="font-sans text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-brand-600">
               {c.directTitle}
             </h2>
             <ul className="mt-5 space-y-4">
               <li>
                 <a href={site.phoneHref} className="group flex items-center gap-4">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl2 bg-teal-50 text-teal-600 transition-colors group-hover:bg-teal-700 group-hover:text-white">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl2 bg-brand-50 text-brand-600 transition-colors group-hover:bg-brand-700 group-hover:text-white">
                     <Icon name="phone" className="h-5 w-5" />
                   </span>
                   <span>
@@ -80,7 +80,7 @@ export default async function ContactPage({
               </li>
               <li>
                 <a href={site.whatsappHref} target="_blank" rel="noreferrer" className="group flex items-center gap-4">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl2 bg-teal-50 text-teal-600 transition-colors group-hover:bg-teal-700 group-hover:text-white">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl2 bg-brand-50 text-brand-600 transition-colors group-hover:bg-brand-700 group-hover:text-white">
                     <Icon name="chat" className="h-5 w-5" />
                   </span>
                   <span>
@@ -91,7 +91,7 @@ export default async function ContactPage({
               </li>
               <li>
                 <a href={`mailto:${site.email}`} className="group flex items-center gap-4">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl2 bg-teal-50 text-teal-600 transition-colors group-hover:bg-teal-700 group-hover:text-white">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl2 bg-brand-50 text-brand-600 transition-colors group-hover:bg-brand-700 group-hover:text-white">
                     <Icon name="mail" className="h-5 w-5" />
                   </span>
                   <span>
@@ -104,7 +104,7 @@ export default async function ContactPage({
           </Reveal>
 
           <Reveal delay={80} className="mt-10">
-            <h2 className="font-sans text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-teal-600">
+            <h2 className="font-sans text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-brand-600">
               {c.addressTitle}
             </h2>
             <address className="mt-4 not-italic text-[0.98rem] leading-relaxed text-ink-soft">
@@ -115,7 +115,7 @@ export default async function ContactPage({
               ))}
             </address>
             <p className="mt-5 flex items-center gap-2 text-[0.9rem] text-ink-soft">
-              <Icon name="clock" className="h-4 w-4 text-teal-500" />
+              <Icon name="clock" className="h-4 w-4 text-brand-500" />
               {copy.common.officeHoursValue}
             </p>
             <div className="mt-6 overflow-hidden rounded-xl2 border border-line">
@@ -131,7 +131,7 @@ export default async function ContactPage({
               href={`https://www.openstreetmap.org/search?query=${mapQuery}`}
               target="_blank"
               rel="noreferrer"
-              className="mt-3 inline-flex items-center gap-1.5 text-[0.85rem] font-semibold text-teal-700"
+              className="mt-3 inline-flex items-center gap-1.5 text-[0.85rem] font-semibold text-brand-700"
             >
               <Icon name="pin" className="h-4 w-4" />
               {c.addressTitle}

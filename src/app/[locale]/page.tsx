@@ -71,7 +71,7 @@ export default async function HomePage({
         <div className="grain" />
         <div
           className="pointer-events-none absolute -left-40 -top-24 h-[32rem] w-[32rem] rounded-full opacity-60"
-          style={{ background: "radial-gradient(circle, rgba(23,134,122,.18) 0%, transparent 65%)" }}
+          style={{ background: "radial-gradient(circle, rgba(53,112,77,.18) 0%, transparent 65%)" }}
         />
         <div className="container-x relative grid items-center gap-14 py-16 lg:grid-cols-[1.08fr_1fr] lg:gap-20 lg:py-24">
           <div>
@@ -94,7 +94,7 @@ export default async function HomePage({
             <ul className="mt-10 grid gap-2.5 sm:grid-cols-2">
               {c.trust.map((t) => (
                 <li key={t} className="flex items-start gap-2.5 text-[0.87rem] text-ink-soft">
-                  <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-teal-500" strokeWidth={2.2} />
+                  <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" strokeWidth={2.2} />
                   {t}
                 </li>
               ))}
@@ -102,7 +102,11 @@ export default async function HomePage({
           </div>
 
           <Reveal delay={120}>
-            <HeroArt badgeOne={c.heroBadges[0]} badgeTwo={c.heroBadges[1]} />
+            <HeroArt
+              badgeOne={c.heroBadges[0]}
+              badgeTwo={c.heroBadges[1]}
+              caption={c.mapCaption}
+            />
           </Reveal>
         </div>
       </section>
@@ -122,7 +126,7 @@ export default async function HomePage({
               >
                 <dt className="sr-only">{s.label}</dt>
                 <dd>
-                  <span className="block font-display text-[3rem] leading-none text-teal-700">{s.value}</span>
+                  <span className="block font-display text-[3rem] leading-none text-brand-700">{s.value}</span>
                   <span className="mt-3 block max-w-[15rem] text-[0.88rem] leading-relaxed text-ink-soft">
                     {s.label}
                   </span>
@@ -142,13 +146,13 @@ export default async function HomePage({
               <article className="group card relative h-full overflow-hidden p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift lg:p-10">
                 <div
                   className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  style={{ background: "radial-gradient(circle, rgba(232,163,61,.18) 0%, transparent 70%)" }}
+                  style={{ background: "radial-gradient(circle, rgba(209,94,0,.18) 0%, transparent 70%)" }}
                 />
                 <div className="relative flex items-start justify-between gap-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl2 bg-teal-50 text-teal-600 transition-colors group-hover:bg-teal-700 group-hover:text-white">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl2 bg-brand-50 text-brand-600 transition-colors group-hover:bg-brand-700 group-hover:text-white">
                     <Icon name={serviceIcons[i]} className="h-5 w-5" />
                   </span>
-                  <span className="font-display text-[2.4rem] leading-none text-teal-100">
+                  <span className="font-display text-[2.4rem] leading-none text-brand-100">
                     0{i + 1}
                   </span>
                 </div>
@@ -156,7 +160,7 @@ export default async function HomePage({
                 <p className="relative mt-3 text-[0.96rem] leading-relaxed text-ink-soft pretty">{s.body}</p>
                 <Link
                   href={s.href as "/arbeitgeber" | "/pflegefachkraefte"}
-                  className="relative mt-6 inline-flex items-center gap-1.5 text-[0.88rem] font-semibold text-teal-700 before:absolute before:inset-0 before:content-['']"
+                  className="relative mt-6 inline-flex items-center gap-1.5 text-[0.88rem] font-semibold text-brand-700 before:absolute before:inset-0 before:content-['']"
                 >
                   {s.linkLabel}
                   <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -176,14 +180,14 @@ export default async function HomePage({
               <Reveal key={a.title} delay={i * 90}>
                 <article
                   className={`relative h-full overflow-hidden rounded-xl3 p-8 lg:p-11 ${
-                    i === 0 ? "bg-teal-950 text-white" : "border border-line bg-white"
+                    i === 0 ? "bg-brand-950 text-white" : "border border-line bg-white"
                   }`}
                 >
                   {i === 0 && <div className="grain grain-light" />}
                   <div className="relative">
                     <span
                       className={`flex h-12 w-12 items-center justify-center rounded-xl2 ${
-                        i === 0 ? "bg-white/10 text-amber-400" : "bg-teal-50 text-teal-600"
+                        i === 0 ? "bg-white/10 text-accent-400" : "bg-brand-50 text-brand-600"
                       }`}
                     >
                       <Icon name={i === 0 ? "users" : "heart"} className="h-5 w-5" />
@@ -191,7 +195,7 @@ export default async function HomePage({
                     <h3 className={`mt-6 font-display text-[2.1rem] leading-tight ${i === 0 ? "text-white" : "text-ink"}`}>
                       {a.title}
                     </h3>
-                    <p className={`mt-3 text-[0.98rem] leading-relaxed pretty ${i === 0 ? "text-teal-100/85" : "text-ink-soft"}`}>
+                    <p className={`mt-3 text-[0.98rem] leading-relaxed pretty ${i === 0 ? "text-brand-100/85" : "text-ink-soft"}`}>
                       {a.body}
                     </p>
                     <div className="mt-7">
@@ -238,19 +242,19 @@ export default async function HomePage({
             <p className="mt-6 text-[1rem] leading-relaxed text-ink-soft pretty">{c.missionBody}</p>
           </div>
           <Reveal delay={100}>
-            <figure className="relative h-full overflow-hidden rounded-xl3 bg-teal-950 p-9 text-white lg:p-12">
+            <figure className="relative h-full overflow-hidden rounded-xl3 bg-brand-950 p-9 text-white lg:p-12">
               <div className="grain grain-light" />
               <div
                 className="pointer-events-none absolute -bottom-16 -right-16 h-64 w-64 rounded-full"
-                style={{ background: "radial-gradient(circle, rgba(232,163,61,.3) 0%, transparent 65%)" }}
+                style={{ background: "radial-gradient(circle, rgba(209,94,0,.3) 0%, transparent 65%)" }}
               />
-              <svg viewBox="0 0 24 24" className="relative h-9 w-9 text-amber-400" fill="currentColor" aria-hidden="true">
+              <svg viewBox="0 0 24 24" className="relative h-9 w-9 text-accent-400" fill="currentColor" aria-hidden="true">
                 <path d="M9.5 5C6.5 6.6 4.6 9.5 4.6 13.2c0 3.4 2 5.8 4.7 5.8 2.3 0 4-1.7 4-3.9 0-2.1-1.5-3.7-3.5-3.7-.4 0-.8 0-1 .1.3-1.6 1.7-3.4 3.5-4.5L9.5 5Zm9.4 0c-3 1.6-4.9 4.5-4.9 8.2 0 3.4 2 5.8 4.7 5.8 2.3 0 4-1.7 4-3.9 0-2.1-1.5-3.7-3.5-3.7-.4 0-.8 0-1 .1.3-1.6 1.7-3.4 3.5-4.5L18.9 5Z" />
               </svg>
               <blockquote className="relative mt-7 font-display text-[1.75rem] leading-[1.25] text-white lg:text-[2.05rem] balance">
                 {c.missionQuote}
               </blockquote>
-              <figcaption className="relative mt-7 text-[0.85rem] font-medium uppercase tracking-[0.14em] text-amber-400">
+              <figcaption className="relative mt-7 text-[0.85rem] font-medium uppercase tracking-[0.14em] text-accent-400">
                 {c.missionAuthor}
               </figcaption>
             </figure>
@@ -307,14 +311,14 @@ export default async function HomePage({
             <SectionHead eyebrow="FAQ" title={copy.common.faqTitle} />
             <p className="mt-6 text-[0.96rem] leading-relaxed text-ink-soft">{c.ctaBody}</p>
             <div className="mt-8 flex flex-col gap-3">
-              <a href={site.phoneHref} className="flex items-center gap-3 text-[0.95rem] font-medium text-teal-700">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-50">
+              <a href={site.phoneHref} className="flex items-center gap-3 text-[0.95rem] font-medium text-brand-700">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-50">
                   <Icon name="phone" className="h-4 w-4" />
                 </span>
                 {site.phone}
               </a>
-              <a href={site.whatsappHref} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-[0.95rem] font-medium text-teal-700">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-teal-50">
+              <a href={site.whatsappHref} target="_blank" rel="noreferrer" className="flex items-center gap-3 text-[0.95rem] font-medium text-brand-700">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-50">
                   <Icon name="chat" className="h-4 w-4" />
                 </span>
                 {copy.common.whatsapp}

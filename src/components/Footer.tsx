@@ -10,7 +10,7 @@ function Social({ href, label, d }: { href: string; label: string; d: string }) 
       target="_blank"
       rel="noreferrer"
       aria-label={label}
-      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-teal-100 transition-colors hover:border-amber-400 hover:text-amber-400"
+      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-brand-100 transition-colors hover:border-accent-400 hover:text-accent-400"
     >
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4" aria-hidden="true">
         <path d={d} />
@@ -23,26 +23,26 @@ export default function Footer({ copy }: { copy: SiteCopy }) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-teal-950 text-teal-100">
+    <footer className="relative overflow-hidden bg-brand-950 text-brand-100">
       <div className="grain grain-light" />
       <div className="container-x relative py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <Logo light />
-            <p className="mt-5 max-w-sm text-[0.92rem] leading-relaxed text-teal-200/85 pretty">
+            <Logo light variant="full" />
+            <p className="mt-5 max-w-sm text-[0.92rem] leading-relaxed text-brand-200/85 pretty">
               {copy.footer.blurb}
             </p>
             <div className="mt-6 space-y-2 text-[0.92rem]">
               <a href={site.phoneHref} className="flex items-center gap-2.5 transition-colors hover:text-white">
-                <Icon name="phone" className="h-4 w-4 text-amber-400" />
+                <Icon name="phone" className="h-4 w-4 text-accent-400" />
                 {site.phone}
               </a>
               <a href={`mailto:${site.email}`} className="flex items-center gap-2.5 transition-colors hover:text-white">
-                <Icon name="mail" className="h-4 w-4 text-amber-400" />
+                <Icon name="mail" className="h-4 w-4 text-accent-400" />
                 {site.email}
               </a>
-              <p className="flex items-start gap-2.5 text-teal-200/85">
-                <Icon name="pin" className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
+              <p className="flex items-start gap-2.5 text-brand-200/85">
+                <Icon name="pin" className="mt-0.5 h-4 w-4 shrink-0 text-accent-400" />
                 <span>
                   {site.street}, {site.postalCode} {site.city}
                 </span>
@@ -51,7 +51,7 @@ export default function Footer({ copy }: { copy: SiteCopy }) {
           </div>
 
           <nav aria-label={copy.footer.pages}>
-            <h2 className="font-sans text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-amber-400">
+            <h2 className="font-sans text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-accent-400">
               {copy.footer.pages}
             </h2>
             <ul className="mt-4 space-y-2.5 text-[0.92rem]">
@@ -64,7 +64,7 @@ export default function Footer({ copy }: { copy: SiteCopy }) {
                 { href: "/kontakt" as const, label: copy.nav.contact },
               ].map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-teal-200/85 transition-colors hover:text-white">
+                  <Link href={l.href} className="text-brand-200/85 transition-colors hover:text-white">
                     {l.label}
                   </Link>
                 </li>
@@ -73,7 +73,7 @@ export default function Footer({ copy }: { copy: SiteCopy }) {
           </nav>
 
           <nav aria-label={copy.footer.legal}>
-            <h2 className="font-sans text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-amber-400">
+            <h2 className="font-sans text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-accent-400">
               {copy.footer.legal}
             </h2>
             <ul className="mt-4 space-y-2.5 text-[0.92rem]">
@@ -83,7 +83,7 @@ export default function Footer({ copy }: { copy: SiteCopy }) {
                 { href: "/agb" as const, label: copy.legal.termsTitle },
               ].map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-teal-200/85 transition-colors hover:text-white">
+                  <Link href={l.href} className="text-brand-200/85 transition-colors hover:text-white">
                     {l.label}
                   </Link>
                 </li>
@@ -92,7 +92,7 @@ export default function Footer({ copy }: { copy: SiteCopy }) {
           </nav>
 
           <div>
-            <h2 className="font-sans text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-amber-400">
+            <h2 className="font-sans text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-accent-400">
               {copy.footer.more}
             </h2>
             <ul className="mt-4 space-y-2.5 text-[0.92rem]">
@@ -101,15 +101,15 @@ export default function Footer({ copy }: { copy: SiteCopy }) {
                   href={site.applicantPortal}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-teal-200/85 transition-colors hover:text-white"
+                  className="text-brand-200/85 transition-colors hover:text-white"
                 >
                   {copy.footer.portal}
                 </a>
               </li>
-              <li className="text-teal-200/85">{copy.common.officeHoursValue}</li>
+              <li className="text-brand-200/85">{copy.common.officeHoursValue}</li>
             </ul>
 
-            <h2 className="mt-8 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-amber-400">
+            <h2 className="mt-8 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-accent-400">
               {copy.footer.social}
             </h2>
             <div className="mt-4 flex gap-2">
@@ -132,7 +132,7 @@ export default function Footer({ copy }: { copy: SiteCopy }) {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-[0.82rem] text-teal-200/70 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-[0.82rem] text-brand-200/70 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {site.legalName}. {copy.footer.rights}
           </p>

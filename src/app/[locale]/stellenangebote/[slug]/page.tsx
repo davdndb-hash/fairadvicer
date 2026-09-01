@@ -110,13 +110,13 @@ export default async function JobDetailPage({
         <div className="container-x relative py-12 lg:py-16">
           <Link
             href="/stellenangebote"
-            className="inline-flex items-center gap-1.5 text-[0.85rem] font-semibold text-teal-700"
+            className="inline-flex items-center gap-1.5 text-[0.85rem] font-semibold text-brand-700"
           >
             <Icon name="arrow" className="h-4 w-4 rotate-180" />
             {copy.jobs.eyebrow}
           </Link>
           <p className="mt-6 flex flex-wrap items-center gap-3 text-[0.82rem] text-ink-muted">
-            <span className="rounded-full bg-teal-50 px-3 py-1 font-semibold text-teal-700">
+            <span className="rounded-full bg-brand-50 px-3 py-1 font-semibold text-brand-700">
               {job.category.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join(" ")}
             </span>
             <span>{t.facility}</span>
@@ -142,7 +142,7 @@ export default async function JobDetailPage({
           <dl className="grid divide-line sm:grid-cols-2 lg:grid-cols-5 lg:divide-x">
             {facts.map((f) => (
               <div key={f.label} className="flex items-center gap-3 border-b border-line py-5 lg:border-b-0 lg:px-6">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-teal-50 text-teal-600">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-600">
                   <Icon name={f.icon} className="h-4 w-4" />
                 </span>
                 <span>
@@ -183,7 +183,7 @@ export default async function JobDetailPage({
           </Reveal>
 
           <Reveal delay={60} className="mt-12">
-            <div className="relative overflow-hidden rounded-xl3 bg-teal-950 p-8 text-white lg:p-10">
+            <div className="relative overflow-hidden rounded-xl3 bg-brand-950 p-8 text-white lg:p-10">
               <div className="grain grain-light" />
               <h2 className="relative font-display text-[2rem] leading-tight">{copy.jobs.detailBenefits}</h2>
               <div className="relative mt-6">
