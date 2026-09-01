@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FairAdvicer – Website
 
-## Getting Started
+Rebuild of fairadvicer.de: Next.js 16 (App Router) + Tailwind CSS v4 + Supabase, deployed on Vercel.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+| Layer | Choice |
+| --- | --- |
+| Framework | Next.js 16, App Router, React 19, TypeScript |
+| Styling | Tailwind CSS v4 (design tokens in `src/app/globals.css`) |
+| i18n | `next-intl` with localised pathnames – German (default, no prefix), English (`/en`), Portuguese (`/pt`) |
+| Data | Supabase (jobs, knowledge-hub posts, contact leads, job applications) |
+| Fonts | Self-hosted Inter + Instrument Serif via `@fontsource*` – no Google Fonts requests |
+
+## Project layout
+
+```
+src/
+  app/[locale]/        route tree (home, arbeitgeber, pflegefachkraefte, ueber-uns,
+                       kontakt, stellenangebote, wissen, legal pages)
+  components/          UI building blocks
+  content/de|en|pt.ts  ALL marketing copy, one typed object per language
+  content/legal/       Impressum, Datenschutz, AGB – reproduced verbatim
+  i18n/                routing + navigation helpers
+  lib/                 supabase client, data access, server actions, site constants
+supabase/migrations/   database schema
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Editing copy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All page text lives in `src/content/de.ts`, `en.ts` and `pt.ts`. They share the
+`SiteCopy` type in `src/content/types.ts`, so if a key is missing in one language
+the build fails – translations cannot silently drift.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Jobs & articles
 
-## Learn More
+Job listings and knowledge-hub articles are rows in Supabase (`public.jobs`,
+`public.posts`). Each row carries a `translations` JSON column keyed by locale:
 
-To learn more about Next.js, take a look at the following resources:
+```json
+{ "de": { "title": "…" }, "en": { … }, "pt": { … } }
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Set `status` to `draft` to hide a row. Pages revalidate every 5–10 minutes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Forms
 
-## Deploy on Vercel
+`src/lib/actions.ts` holds two server actions that write to Supabase:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* `submitLead` → `public.contact_leads` (contact + employer enquiry forms)
+* `submitApplication` → `public.job_applications` (apply-to-job form)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Both use a honeypot field, server-side validation and row-level-security policies
+that allow inserts but never reads from the browser.
+
+## Environment
+
+Publishable Supabase values are baked in as fallbacks in `src/lib/supabase.ts`.
+To point the site at a different project, set in Vercel:
+
+```
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+NEXT_PUBLIC_SITE_URL
+```
+
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+## Before going live
+
+1. Replace the placeholder brand mark in `src/components/Brand.tsx` with the real logo.
+2. Add real photography (team, facilities) – the design has slots for it.
+3. Add a cookie/consent banner if any analytics or embedded media is introduced.
+   The site currently sets no cookies and loads no third-party trackers.
+4. Have the Datenschutzerklärung reviewed – it was carried over verbatim from the
+   old site and still describes the old WordPress stack.

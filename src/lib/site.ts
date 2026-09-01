@@ -1,0 +1,20 @@
+export const site = {
+  name: "FairAdvicer",
+  legalName: "FairAdvicer GmbH",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.fairadvicer.de",
+  phone: "+49 89 24 20 76 100",
+  phoneHref: "tel:+4989242076100",
+  whatsapp: "+49 151 466 412 37",
+  whatsappHref: "https://wa.me/4915146641237",
+  email: "info@fairadvicer.de",
+  street: "Blumenstraße 3",
+  postalCode: "85540",
+  city: "Haar",
+  country: "DE",
+  applicantPortal: "https://jobs.fairadvicer.de/o/intern",
+  social: {
+    facebook: "https://www.facebook.com/FairAdvicer",
+    instagram: "https://www.instagram.com/fairadvicer_germany/",
+    linkedin: "https://www.linkedin.com/company/fairadvicer/",
+  },
+} as const;
